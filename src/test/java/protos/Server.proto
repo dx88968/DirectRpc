@@ -1,0 +1,40 @@
+option java_package = "generatedProtos";
+option java_outer_classname = "BankServiceProtos";
+option java_generic_services = true;
+option java_generate_equals_and_hash = true;
+
+message registerRequestProto {
+	optional uint64 expectedID = 1;
+}
+
+message operationResponseProto {
+	required uint64 resultCode = 1;
+	optional string message = 2;
+}
+
+message depositRequestProto {
+	required uint64 id = 1;
+	required uint64 amount = 2;
+}
+
+message transferRequestProto {
+	required uint64 id = 1;
+	required uint64 amount = 2;
+}
+
+message inquryRequestProto {
+	required uint64 id = 1;
+}
+
+message inquryResponseProto {
+	required uint64 id = 1;
+	required uint64 checkAccount = 2;
+	required uint64 depositAccount = 3;
+}
+
+service BankService {
+	rpc register(registerRequestProto) returns (operationResponseProto);
+	rpc deposit(depositRequestProto) returns (operationResponseProto);
+	rpc transfer(transferRequestProto) returns (operationResponseProto);
+	rpc inqury(inquryRequestProto) returns (inquryResponseProto);
+}

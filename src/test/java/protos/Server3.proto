@@ -1,0 +1,15 @@
+option java_package = "coreProtos";
+option java_outer_classname = "RequestHeaderProtos";
+option java_generic_services = true;
+option java_generate_equals_and_hash = true;
+
+message RequestHeaderProto {
+	required string protocolName = 1;
+	required string methodName = 2;
+}
+
+message ResponseHeaderProto {
+	required uint32 resultCode = 1;
+	optional string message = 2;
+}
+

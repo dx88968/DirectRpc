@@ -1,0 +1,12 @@
+option java_package = "coreProtos";
+option java_outer_classname = "RpcHeaderProtos";
+option java_generic_services = true;
+option java_generate_equals_and_hash = true;
+
+message RpcRequestHeaderProto {
+	required uint32 callid= 1;
+}
+
+message RpcResponseHeaderProto {
+	required uint32 callid= 1;
+}

@@ -1,0 +1,19 @@
+option java_package = "generatedProtos";
+option java_outer_classname = "IRSServiceProtos";
+option java_generic_services = true;
+option java_generate_equals_and_hash = true;
+
+message checkTaxRequestProto {
+	required uint64 ID = 1;
+}
+
+message checkTaxResponseProto {
+	required uint64 resultCode = 1;
+	optional string message = 2;
+	optional uint64 tax =3;
+}
+
+
+service IRSService {
+	rpc checkTax(checkTaxRequestProto) returns (checkTaxResponseProto);
+}

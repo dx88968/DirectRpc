@@ -115,7 +115,7 @@ public class DirectOutputTracker extends Traceable{
 		Condition tempCondition=null;
 		while(iter.hasNext()){
 			tempCondition=iter.next();
-			if (tempCondition.satisfy(tarCondition)) {
+			if (tarCondition.satisfy(tempCondition)) {
 				activePipelines.get(tempCondition).writeline(attach+content);
 			}
 		}

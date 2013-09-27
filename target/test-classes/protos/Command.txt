@@ -1,0 +1,4 @@
+protoc --java_out=src/ src\protos\Server.proto
+
+
+//run under the project directory

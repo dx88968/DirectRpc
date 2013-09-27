@@ -12,9 +12,9 @@ public class Condition {
 	
 	
 	public Condition(String traceMark, String className, String methodRep,TraceLevel level) {
-		this.traceMark = traceMark;
-		this.className = className;
-		this.methodRep = methodRep;
+		this.traceMark = (traceMark!=null && traceMark.length()>0)?traceMark:null;
+		this.className = (className!=null && className.length()>0)?className:null;
+		this.methodRep = (methodRep!=null && methodRep.length()>0)?methodRep:null;;
 		this.level=level;
 	}
 
@@ -24,28 +24,37 @@ public class Condition {
 	
 	public boolean satisfy(String traceMark,String className, String methodRep,TraceLevel level){
 		Pattern pattern;
-		if (traceMark != null && this.traceMark!=null && this.traceMark.length()>0) {
+		if (traceMark != null) {
+			if(this.traceMark==null){
+				return false;
+			}
 			pattern=Pattern.compile(traceMark);
-			if (pattern.matcher(this.traceMark).matches()) {
+			if (!pattern.matcher(this.traceMark).matches()) {
 				return false;
 			}
 		}
-		if (className != null && this.className!=null && this.className.length()>0) {
+		if (className != null) {
+			if (this.className==null) {
+				return false;
+			}
 			pattern=Pattern.compile(className);
-			if (pattern.matcher(this.className).matches()) {
+			if (!pattern.matcher(this.className).matches()) {
 				return false;
 			}
 		}
-		if (methodRep != null && this.methodRep!=null && this.methodRep.length()>0) {
+		if (methodRep != null) {
+			if (this.methodRep==null) {
+				return false;
+			}
 			pattern=Pattern.compile(methodRep);
-			if (pattern.matcher(this.methodRep).matches()) {
+			if (!pattern.matcher(this.methodRep).matches()) {
 				return false;
 			}
 		}
-		if (this.level!=null && level!=null && level.getValue()<this.level.getValue()) {
+		if (this.level!=null && level!=null && level.getValue()>this.level.getValue()) {
 				return false;
 		}
-		return true;
+		return true;	
 	}
 	
 	

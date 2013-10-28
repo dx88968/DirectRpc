@@ -3,13 +3,5 @@ DirectRpc
 
 Highly Controllable Java Rpc framework
 
-Wiki is under construction, and will release it's first version before Oct. 25th, 2013.
-
-But I am pleased to announce that the "SnifferMouse" which is used to monitor remote outputs in "DirectRpc"
-has been extracted from this project to be a independent project named "SnifferMouse" (https://github.com/dx88968/SnifferMouse-java). "SnifferMouse" currently has
-its first release as version 0.0.1 and a well organized Wiki guiding anyone interested in using it to monitor remote 
-outputs.
-
-Again thank you for your patient, and I promise the wiki of "DirectRpc" will be ready soon.
-
-Xun
+DirectRpc provides you a highly effective and reliable rpc platform constructed by Google protobuf combined with Java nio &reflection as well as a build-in http server providing RESTful-style web services enabling you to control and monitor your rpc jobs.
+For more details, please refer to https://github.com/dx88968/DirectRpc/wiki
